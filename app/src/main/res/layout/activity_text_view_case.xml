@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".TextViewCaseActivity">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      android:background="@color/red">
+      <!--
+         layout_gravity：相对于父元素的位置
+         gravity： 元素内部元素的位置
+       -->
+      <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="@color/purple_200"
+        android:gravity="bottom"
+        android:text="@string/text_view_case_content" />
+    </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--
+       文字阴影
+         文字大小一般用sp
+         shadowRadius：模糊度
+    -->
+    <TextView
+      android:id="@+id/textView"
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:shadowColor="@color/red"
+      android:shadowDx="10"
+      android:shadowDy="10"
+      android:shadowRadius="10.0"
+      android:text="@string/text_view_case_content"
+      android:textColor="@color/black"
+      android:textSize="30sp" />
+
+  </LinearLayout>
+
+  <!--
+    跑马灯
+      singleLine: 内容单行显示
+      ellipsize: 超出屏幕...的位置
+      marqueeRepeatLimit: 滚动的次数
+    -->
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="这个是一个跑马灯这个是一个跑马灯这个是一个跑马灯这个是一个跑马灯这个是一个跑马灯"
+    android:textSize="30sp"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:singleLine="true"
+    android:ellipsize="end"
+    android:marqueeRepeatLimit="marquee_forever"
+    />
+
+</LinearLayout>
