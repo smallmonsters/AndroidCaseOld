@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".ButtonViewCase">
+  <!--
+    NOTE
+    Button 继承 TextView
+    background设置无效。A：change themes.xml > parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge"
+    setBackgroundResource(int)动态设置background
+    setBackgroundTintList(ColorStateList)动态设置backgroundTint
+    NOTE: Q：为什么颜色只填充了drawable A:同时使用backgroundTint和background，backgroundTint只会填充drawable
+    -->
+  <Button
+    android:layout_width="200dp"
+    android:layout_height="120dp"
+    android:backgroundTint="@color/btn_case"
+    android:text="按钮"
+    android:textColor="#fff"
+    android:textSize="30sp" />
+
+  <Button
+    android:layout_width="200dp"
+    android:layout_height="120dp"
+    android:background="@drawable/button_case"
+    android:backgroundTint="@color/btn_case"
+    android:text="按钮"
+    android:textColor="#fff"
+    android:textSize="30sp" />
+
+  <Button
+    android:layout_width="200dp"
+    android:layout_height="120dp"
+    android:background="#ff0000"
+    android:text="按钮"
+    android:textColor="#fff"
+    android:textSize="30sp" />
+
+<!--  backgroundTint和background都是颜色时， backgroundTint覆盖 background-->
+  <Button
+    android:layout_width="200dp"
+    android:layout_height="120dp"
+    android:background="#ff0000"
+    android:text="按钮"
+    android:textColor="#fff"
+    android:backgroundTint="@color/btn_case"
+    android:textSize="30sp" />
+
+</LinearLayout>
