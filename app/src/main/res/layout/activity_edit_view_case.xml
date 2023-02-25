@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".EditViewCase">
+  <!--
+    动态设置drawable，drawableRight好像久没有生效了
+    inputType: 输入框的类型 如：密码、日期等
+  -->
+  <EditText
+    android:id="@+id/edit_case"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#39000000"
+    android:drawableRight="@drawable/button_case"
+    android:hint="请输入"
+    android:inputType="textPassword"
+    android:textColor="#ff0000" />
+
+  <EditText
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#39000000"
+    android:drawableRight="@drawable/button_case"
+    android:hint="请输入"
+    android:textColor="#ff0000" />
+
+  <com.example.androidcase.MyEditTextDrawable
+    android:drawableLeft="@drawable/edit_text_case"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"/>
+
+</LinearLayout>

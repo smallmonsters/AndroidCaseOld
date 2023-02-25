@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ButtonViewCase.class);
         startActivity(intent);
     }
+    public void toEditViewCase(View view) {
+        Intent intent = new Intent(this, EditViewCase.class);
+        startActivity(intent);
+    }
 }
