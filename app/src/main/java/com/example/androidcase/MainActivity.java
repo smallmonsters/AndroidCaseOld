@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditViewCase.class);
         startActivity(intent);
     }
+    public void toImageCase(View view) {
+        Intent intent = new Intent(this, ImageCase.class);
+        startActivity(intent);
+    }
 }

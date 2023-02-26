@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".ImageCase">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    NOTE:  这里一定要有一个试图-->
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+      <!--      图片默认会自适应，ImageView会有瘤留白-->
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/image1" />
+      <!--
+        scaleType
+           fitXY：填充整个ImageView，图片会拉伸
+           center：ImageView显示图片中心，图片超出的部分被裁剪
+           centerCrop： 等比缩放图片使其充满ImageView，图片超出的部分被裁剪
+           centerInside： 等比缩放图片使其 居中 展示在 ImageView 里。图片大小 > ImageView 大小，则将图片等比列缩小，使得整张图片都能完全展示在
+           https://www.jianshu.com/p/7e4da7bc8b5e
+       -->
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/image1" />
+      <!--
+        maxWidth、maxHeight、adjustViewBounds使图片和ImageView一样大
+      -->
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="80dp"
+        android:maxHeight="120dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/image1" />
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>
