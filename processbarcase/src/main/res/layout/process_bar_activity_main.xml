@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".ProcessBarMainActivity">
+
+  <ProgressBar
+    android:id="@+id/processBar"
+    android:layout_width="50dp"
+    android:layout_height="50dp" />
+  <Button
+    android:id="@+id/button"
+    android:layout_width="120dp"
+    android:layout_height="65dp"
+    android:onClick="toggleStatus"
+    android:text="显示隐藏loading"
+    android:textSize="18sp"
+    tools:ignore="MissingConstraints" />
+
+  <ProgressBar
+    android:id="@+id/process"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:max="100"
+    android:progress="50" />
+
+  <ProgressBar
+    style="?android:attr/progressBarStyleHorizontal"
+    android:indeterminate="true"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content" />
+</LinearLayout>

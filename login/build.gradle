@@ -1,21 +1,18 @@
-plugins {
-  id 'com.android.application'
-}
-
-print(rootProject.ext.projectName)
+apply plugin: release ? 'com.android.library' : 'com.android.application'
 
 def config = rootProject.ext.defaultConfig
 def _compileSdk = rootProject.ext.compileSdk
 def appId = rootProject.ext.appId
-def url = rootProject.ext.url[rootProject.ext.env]
-
+def _release = rootProject.ext.release
 
 android {
-  namespace 'com.example.androidcase'
+  namespace 'com.example.login'
   compileSdk _compileSdk
 
   defaultConfig {
-    applicationId appId.app
+    if (!_release) {
+      applicationId appId.login
+    }
     minSdk config.minSdk
     targetSdk config.targetSdk
     versionCode config.versionCode
@@ -24,12 +21,8 @@ android {
   }
 
   buildTypes {
-    debug {
-      buildConfigField("String", "debug", "\"${url}\"")
-    }
     release {
       minifyEnabled false
-      buildConfigField("String", "debug", "\"${url}\"")
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
@@ -37,23 +30,28 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
-  buildFeatures {
-    viewBinding true
+  sourceSets {
+    main {
+      //      TODO 为什么这里拿不到release的值呢
+      if (_release) {
+        manifest.srcFile "src/main/AndroidManifest.xml"
+        java {
+          // release时，不需要打包debug
+          exclude "**/debug/**"
+        }
+      } else {
+        manifest.srcFile "src/main/debug/AndroidManifest.xml"
+      }
+    }
   }
 }
 
 dependencies {
+
   implementation 'androidx.appcompat:appcompat:1.4.1'
   implementation 'com.google.android.material:material:1.5.0'
   implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-  implementation 'androidx.navigation:navigation-fragment:2.4.1'
-  implementation 'androidx.navigation:navigation-ui:2.4.1'
-  implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
-  implementation project(path: ':processbarcase')
   testImplementation 'junit:junit:4.13.2'
   androidTestImplementation 'androidx.test.ext:junit:1.1.3'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-  if (release) {
-    implementation project(path: ':login')
-  }
 }

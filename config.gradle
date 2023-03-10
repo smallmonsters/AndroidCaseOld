@@ -1,0 +1,21 @@
+ext {
+  projectName = "AndroidCase"
+  compileSdk = 32
+  defaultConfig = [
+    minSdk                   : 28,
+    targetSdk                : 32,
+    versionCode              : 1,
+    versionName              : "1.0",
+    testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner",
+  ]
+  appId = [
+    app  : "com.example.androidcase",
+    login: "com.example.login",
+  ]
+  release = false
+  env = "pro"
+  url = [
+    pro : "正式环境地址",
+    test: "测试环境地址",
+  ]
+}
