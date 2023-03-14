@@ -22,14 +22,15 @@
   <EditText
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:layout_marginTop="12dp"
     android:background="#39000000"
     android:drawableRight="@drawable/button_case"
     android:hint="请输入"
     android:textColor="#ff0000" />
 
   <com.example.androidcase.MyEditTextDrawable
-    android:drawableLeft="@drawable/edit_text_case"
     android:layout_width="match_parent"
-    android:layout_height="100dp"/>
+    android:layout_height="100dp"
+    android:drawableLeft="@drawable/edit_text_case" />
 
 </LinearLayout>

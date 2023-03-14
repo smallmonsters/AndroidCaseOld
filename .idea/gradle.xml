@@ -12,8 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/listviewlisttext" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/processbarcase" />
+            <option value="$PROJECT_DIR$/recyclerViewListText" />
           </set>
         </option>
       </GradleProjectSettings>
