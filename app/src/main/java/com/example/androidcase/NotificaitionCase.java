@@ -1,30 +1,56 @@
 package com.example.androidcase;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 public class NotificaitionCase extends AppCompatActivity {
-  NotificationManager notificationManager;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_notificaition_case);
-    notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    NotificationManager notificationManager = getSystemService(NotificationManager.class);
+    // 创建通知渠道，是否>= Android 8.0
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      NotificationChannel channel = new NotificationChannel("channel_id", "Channel Name", NotificationManager.IMPORTANCE_HIGH);
+      notificationManager.createNotificationChannel(channel);
+    }
   }
 
   public void sendNotification(View view) {
-//    Notification notification = new Notification.Builder(this)
-//      .setContentTitle("New message")
-//      .setContentText("You have received a new message.")
-//      .build();
-//    notificationManager.notify(1, notification);
+    // 创建通知点击意图
+    Intent intent = new Intent(this, ButtonViewCase.class);
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+    // 创建通知
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "channel_id")
+      .setContentTitle("My Notification")
+      .setContentText("Hello World!")
+      .setSmallIcon(R.drawable.edit_text_case)
+      .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.image1))
+      .setContentIntent(pendingIntent)
+      .setAutoCancel(true);
+
+    // 发送通知
+    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+    notificationManager.notify(1, builder.build());
   }
 
+
   public void closeNotification(View view) {
+    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+    notificationManager.cancel(1);
   }
 }

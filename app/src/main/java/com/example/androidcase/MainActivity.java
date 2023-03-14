@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void toLoginCase(View view) {
-//    Intent intent = new Intent(this, Login_MainActivity.class);
-//    startActivity(intent);
+    // Intent intent = new Intent(this, Login_MainActivity.class);
+    // startActivity(intent);
   }
 
 }
