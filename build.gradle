@@ -1,7 +1,38 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id 'com.android.application' version '7.3.1' apply false
-    id 'com.android.library' version '7.3.1' apply false
+  id 'com.android.application' version '7.3.1' apply false
+  id 'com.android.library' version '7.3.1' apply false
 }
 
 apply from: "config.gradle"
+
+task method {
+  def num = say 2
+  println(num)
+}
+
+def say(int x) {
+  return x + 1
+}
+
+task closure {
+  mEach {
+    println(it)
+  }
+  mEachMap({ key, value ->
+    println("${key}${value}")
+  })
+}
+
+def mEach(closure) {
+  for (i in 0..5) {
+    closure(i)
+  }
+}
+
+def mEachMap(clo) {
+  def map = [name: "123", age: 12]
+  for (i in map) {
+    clo(i.key, i.value)
+  }
+}

@@ -11,7 +11,7 @@ public class Route implements Router {
   private final String type;
   Context context;
 
-  Route(String s, Context c) {
+  public Route(String s, Context c) {
     type = s;
     context = c;
   }
@@ -81,6 +81,4 @@ public class Route implements Router {
       }
     };
   }
-
-
 }

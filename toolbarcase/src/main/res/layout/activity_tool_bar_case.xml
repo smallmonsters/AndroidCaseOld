@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ToolBarCase">
+
+  <androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#ffff00"
+    app:buttonGravity="center_vertical"
+    app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24"
+    app:subtitle="子标题"
+    app:subtitleTextColor="@color/black"
+    app:title="自定义Toolbar"
+    app:titleTextColor="@color/purple_200" />
+</LinearLayout>

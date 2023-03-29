@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="MyCustomView">
+    <attr name="backgroundColor" description="Background color" format="color" />
+    <attr name="enabled" description="Whether view is enabled" format="boolean" />
+    <attr name="lineWidth" description="Line width" format="integer" max="10" min="1" />
+    <attr name="customText" format="string" />
+  </declare-styleable>
+</resources>

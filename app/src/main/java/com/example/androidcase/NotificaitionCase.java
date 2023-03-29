@@ -29,6 +29,7 @@ public class NotificaitionCase extends AppCompatActivity {
   }
 
   public void sendNotification(View view) {
+    // TODO: 2023/3/21 点击通知，进入了相关页面A，页面A点击返回怎么回到首页或者调整到指定页面
     // 创建通知点击意图
     Intent intent = new Intent(this, ButtonViewCase.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
