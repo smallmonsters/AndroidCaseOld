@@ -4,16 +4,39 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:orientation="vertical"
   tools:context=".ToolBarCase">
 
   <androidx.appcompat.widget.Toolbar
+    android:id="@+id/my_toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
     android:background="#ffff00"
+    android:contentInsetLeft="0dp"
+    android:contentInsetEnd="0dp"
+    android:contentInsetRight="0dp"
+    android:elevation="4dp"
     app:buttonGravity="center_vertical"
+    app:contentInsetStart="101dp"
     app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24"
     app:subtitle="子标题"
     app:subtitleTextColor="@color/black"
     app:title="自定义Toolbar"
     app:titleTextColor="@color/purple_200" />
+
+
+  <androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:text="居中的Toolbar" />
+
+  </androidx.appcompat.widget.Toolbar>
 </LinearLayout>

@@ -9,6 +9,7 @@ public interface Router {
   String ProcessBar = "ProcessBar";
   String ImageCase = "ImageCase";
   String EditViewCase = "EditViewCase";
+  String AlertDialog = "AlertDialog";
 
   String getTitle();
 

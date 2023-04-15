@@ -51,6 +51,12 @@ public class Route implements Router {
 
   }
 
+  public void toAlertDialog(View view) {
+    Intent intent = new Intent(view.getContext(), AlertDialogCase.class);
+    context.startActivity(intent);
+
+  }
+
   public View.OnClickListener getClickListener() {
     return new View.OnClickListener() {
       @Override
@@ -73,6 +79,9 @@ public class Route implements Router {
             break;
           case Router.Notification:
             toNotification(view);
+            break;
+          case Router.AlertDialog:
+            toAlertDialog(view);
             break;
           default:
             Toast.makeText(context, "路由类型错了", Toast.LENGTH_SHORT).show();

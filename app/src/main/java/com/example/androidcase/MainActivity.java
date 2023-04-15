@@ -2,6 +2,7 @@ package com.example.androidcase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.ListView;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     myDataList.add(new MyData(new Route(Router.ImageCase, this)));
     myDataList.add(new MyData(new Route(Router.ProcessBar, this)));
     myDataList.add(new MyData(new Route(Router.Notification, this)));
+    myDataList.add(new MyData(new Route(Router.AlertDialog, this)));
 
     // 创建一个自定义适配器对象，将数据与ListView关联起来
     MyListAdapter adapter = new MyListAdapter(this, R.layout.list_text, myDataList);
@@ -44,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
   public void toTextViewCase(View view) {
     Intent intent = new Intent(this, TextViewCaseActivity.class);
     startActivity(intent);
+  }
+
+  public void handlerDemo() {
+    MyHandlerThread myThread = new MyHandlerThread("MyHandlerThread");
+    myThread.start();
+    myThread.prepareHandler();
+
+    // 发送消息到 MyHandlerThread 中处理
+    myThread.getHandler().sendMessage(Message.obtain());
   }
 
   public void toLoginCase(View view) {
