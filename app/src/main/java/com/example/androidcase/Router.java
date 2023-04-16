@@ -10,6 +10,7 @@ public interface Router {
   String ImageCase = "ImageCase";
   String EditViewCase = "EditViewCase";
   String AlertDialog = "AlertDialog";
+  String PopupWindow = "PopupWindow";
 
   String getTitle();
 

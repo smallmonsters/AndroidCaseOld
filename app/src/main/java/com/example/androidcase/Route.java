@@ -82,6 +82,8 @@ public class Route implements Router {
             break;
           case Router.AlertDialog:
             toAlertDialog(view);
+          case Router.PopupWindow:
+            toPopupWindow(view);
             break;
           default:
             Toast.makeText(context, "路由类型错了", Toast.LENGTH_SHORT).show();
@@ -89,5 +91,10 @@ public class Route implements Router {
 
       }
     };
+  }
+
+  public void toPopupWindow(View view) {
+    Intent intent = new Intent(view.getContext(), PopupWindowCase.class);
+    context.startActivity(intent);
   }
 }

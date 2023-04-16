@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     myDataList.add(new MyData(new Route(Router.ProcessBar, this)));
     myDataList.add(new MyData(new Route(Router.Notification, this)));
     myDataList.add(new MyData(new Route(Router.AlertDialog, this)));
+    myDataList.add(new MyData(new Route(Router.PopupWindow, this)));
 
     // 创建一个自定义适配器对象，将数据与ListView关联起来
     MyListAdapter adapter = new MyListAdapter(this, R.layout.list_text, myDataList);
